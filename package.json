@@ -1,0 +1,34 @@
+{
+  "name": "sdk-with-squads",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yugure-orca/sdk-with-squads.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yugure-orca/sdk-with-squads/issues"
+  },
+  "homepage": "https://github.com/yugure-orca/sdk-with-squads#readme",
+  "description": "",
+  "dependencies": {
+    "@orca-so/tx-sender": "^1.0.2",
+    "@orca-so/whirlpools": "^4.0.0",
+    "@orca-so/whirlpools-client": "^4.0.0",
+    "@orca-so/whirlpools-core": "^2.0.0",
+    "@solana-program/system": "0.7.0",
+    "@solana-program/token-2022": "0.4.0",
+    "@solana/kit": "2.2",
+    "@solana/sysvars": "2.2",
+    "@solana/web3.js": "^1.98.4",
+    "@sqds/multisig": "^2.1.4",
+    "fastestsmallesttextencoderdecoder": "^1.0.22",
+    "typescript": "^5.9.2",
+    "ws": "^8.18.3"
+  }
+}
