@@ -39,14 +39,14 @@ export function getEphemeralSignerPda(transactionPda: Address, ephemeralSignerIn
   return address(ephemeralSignerPda.toBase58());
 }
 
-export async function createSquadsVaultTransactionInstruction(
+export function createSquadsVaultTransactionInstruction(
   multisigPda: Address,
   nextTransactionIndex: number,
   vaultIndex: number,
   proposer: Address,
   instructions: IInstruction[],
   ephemeralSigners: number = 0,
-): Promise<IInstruction> {
+): IInstruction {
   const web3jsMultisigPda = new PublicKey(multisigPda);
   const web3jsProposer = new PublicKey(proposer);
   const web3jsVaultPda = new PublicKey(getVaultPda(multisigPda, vaultIndex));
@@ -58,7 +58,7 @@ export async function createSquadsVaultTransactionInstruction(
     instructions: web3jsInstructions,
   });
 
-  const ix = await multisig.instructions.vaultTransactionCreate({
+  const ix = multisig.instructions.vaultTransactionCreate({
     multisigPda: web3jsMultisigPda,
     transactionIndex: BigInt(nextTransactionIndex),
     creator: web3jsProposer,
